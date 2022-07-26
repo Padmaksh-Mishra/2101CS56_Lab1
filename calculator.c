@@ -17,6 +17,10 @@ void calculate(){
             result = num1 + num2;
             break;
         case '-':
+            if(num2==0){
+                printf("Cannot divide by 0\n");
+                return;
+            }
             result = num1 - num2;
             break;
         case '/':
