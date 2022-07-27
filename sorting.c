@@ -6,6 +6,7 @@ int partition(int *arr,int lo, int hi);
 
 // Sorting Functions
 void insertion_sort(int arr[], int n);      // O(n^2)
+void selection_sort(int arr[], int n);      // O(n^2)
 void quick_sort(int arr[], int low, int high);    // O(nlogn)
 
 
@@ -41,6 +42,23 @@ void insertion_sort(int arr[], int n)
         arr[j + 1] = key;
     }
     return;
+}
+
+void selection_sort(int arr[], int n)
+{
+    int i, j, target;
+    for (i = 0; i < n-1; i++)
+    {
+        target = i;
+        for (j = i+1; j < n; j++)
+        {
+            if (arr[j] < arr[target])
+            {
+                target = j;
+            }
+        }
+        swap(&arr[target], &arr[i]);
+    }
 }
 
 int partition (int arr[], int low, int high)
