@@ -5,9 +5,10 @@ void swap(int *a,int *b);
 int partition(int *arr,int lo, int hi);
 
 // Sorting Functions
-void insertion_sort(int arr[], int n);      // O(n^2)
-void selection_sort(int arr[], int n);      // O(n^2)
-void quick_sort(int arr[], int low, int high);    // O(nlogn)
+void insertion_sort(int arr[], int n);              // O(n^2)
+void selection_sort(int arr[], int n);              // O(n^2)
+void bubbleSort(int arr[], int n);                  // O(n^2)
+void quick_sort(int arr[], int low, int high);      // O(nlogn)
 
 
 int main(void){
@@ -59,6 +60,15 @@ void selection_sort(int arr[], int n)
         }
         swap(&arr[target], &arr[i]);
     }
+}
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
 }
 
 int partition (int arr[], int low, int high)
